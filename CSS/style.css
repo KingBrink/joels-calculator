@@ -1,0 +1,55 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --primary:(black);
+    --secondary:rgb(20, 215, 221);
+    --alternative:rgb(246, 14, 134);
+    --awesome: rgb(208, 49, 208);
+    --mainBoxShadow: .5vw .5vw .3vw rgb(57, 60, 218);
+    --borderColor:rgb(29, 95, 29);
+    --elementShadow:rgb(28, 21, 21);
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    width: 20rem;
+    aspect-ratio: 2 / 3;
+    box-shadow: var(--mainBoxShadow);
+    border-radius: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+.container :nth-child(1), :last-child{
+    grid-column: 1 / -1;
+}
+input[data-output] {
+    text-align: right;
+}
+:is(button, input) {
+    box-shadow: var(--elementShadow);
+    font-weight: bolder;
+    font-size: 1.1rem;
+    transition: all 0.3s;
+
+    &:hover {
+        box-shadow: unset;
+        border: 2px solid var(--awesome)}
+}
+
+
+button[data-operator] {
+    background-color: var(--awesome);
+}
+
